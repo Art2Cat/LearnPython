@@ -1,5 +1,6 @@
 #!/user/bin/env python
 # coding:utf-8
+
 ASCII = 'ascii'
 UTF8 = 'utf-8'
 UTF16 = 'utf-16'
@@ -26,10 +27,9 @@ print(chr(6616))
 r = (85 - 72) / 72
 print('%.2f %%' % r)
 
-
 lists = []
 for i in range(10):
-    lists.insert(i,i)
+    lists.insert(i, i)
 print(lists)
 
 lists.clear()
@@ -40,7 +40,6 @@ for i in range(10):
 
 print(lists)
 print(lists[-3:])
-
 
 L = [
     ['Apple', 'Google', 'Microsoft'],

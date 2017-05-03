@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # coding:utf-8
+
 from pyparsing import basestring
 
 print("test test")
@@ -18,8 +19,7 @@ hahah all of the story is joke""")
 print("""
 what is happening here？
 can somebody tell me why?
-it\'s interesting!
-""")
+it\'s interesting!""")
 
 # 关于变量
 x = "fuck"
@@ -38,11 +38,11 @@ def calculate_bmi(height, weight):
     else:
         bmi = float(weight) / (float(height) ** 2)
         print("%.1f" % bmi)
-    if bmi > 32:
+    if int(bmi) > 32:
         print("You are so fat")
-    elif 28 < bmi <= 32:
+    elif 28 < int(bmi) <= 32:
         print("obesity")
-    elif 25 < bmi <= 28:
+    elif 25 < int(bmi) <= 28:
         print("overweight")
     elif 18.5 < float(bmi) <= 25:
         print("normal")
