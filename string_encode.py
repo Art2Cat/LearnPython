@@ -1,5 +1,5 @@
 #!/user/bin/env python
-# coding:utf-8
+
 ASCII = 'ascii'
 UTF8 = 'utf-8'
 UTF16 = 'utf-16'
@@ -29,7 +29,7 @@ print('%.2f %%' % r)
 
 lists = []
 for i in range(10):
-    lists.insert(i,i)
+    lists.insert(i, i)
 print(lists)
 
 lists.clear()

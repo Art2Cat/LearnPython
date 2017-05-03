@@ -1,6 +1,4 @@
-#!/usr/bin/python
-# coding:utf-8
-from pyparsing import basestring
+#!/usr/bin/env python
 
 print("test test")
 
@@ -15,11 +13,10 @@ when time is out
 people wanna to die for me
 hahah all of the story is joke""")
 
-print("""
-what is happening here？
-can somebody tell me why?
-it\'s interesting!
-""")
+# print("""
+# what is happening here？
+# can somebody tell me why?
+# it\'s interesting!""")
 
 # 关于变量
 x = "fuck"
