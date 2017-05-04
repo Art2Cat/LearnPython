@@ -7,7 +7,7 @@ count = 0
 
 while count < 3:
     username = input("Enter User Name:")
-    if username is str:
+    if isinstance(username, str):
         if username == "test":
             while count < 3:
                 userpass = getpass.getpass(prompt="Enter your Password:")
