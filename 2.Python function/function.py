@@ -3,8 +3,8 @@ function test
 """
 
 
-# !/usr/bin/python
-# coding:utf-8
+# !/usr/bin/python3
+
 
 
 def enroll(name, gender, age, city='Shanghai'):

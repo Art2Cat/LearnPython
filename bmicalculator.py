@@ -1,8 +1,8 @@
 """
 this is bmi calculator
 """
-# !/usr/bin/python
-# coding:utf-8
+# !/usr/bin/python3
+
 
 from LearnPython.util import calculate_bmi
 

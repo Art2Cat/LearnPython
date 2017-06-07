@@ -1,4 +1,4 @@
-# coding: utf-8
+#!/usr/bin/env python3
 
 # []包裹起来是列表解析式
 L = [x * x for x in range(10)]

@@ -1,4 +1,4 @@
-#!/user/bin/env python
+#!/user/bin/env python3
 
 ASCII = 'ascii'
 UTF8 = 'utf-8'
