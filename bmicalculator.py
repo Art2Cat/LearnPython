@@ -4,7 +4,7 @@ this is bmi calculator
 # !/usr/bin/python3
 
 
-from LearnPython.util import calculate_bmi
+from LearnPython.utils.util import calculate_bmi
 
 height = input("Enter your height(meter):")
 weight = input("Enter your weight(kg):")
