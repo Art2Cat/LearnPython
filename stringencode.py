@@ -10,13 +10,15 @@ UNICODE = 'unicode'
 
 print("我是不是中国人，显然不是才怪 apparently")
 
-s = u"字符串"
-
-x = s.encode(GBK)
-
-x = x.decode(GBK)
+s = "字符串"
+print(s)
+x = s.encode(GB18030)
 print(x)
-z = s.encode(UTF8)
+x = x.decode(GBK)
+print("s =%s" %x)
+z = s.encode(GBK)
+print(z)
+z = z.decode(GB2312)
 print(z)
 
 y = ord("A")

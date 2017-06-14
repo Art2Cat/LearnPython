@@ -1,8 +1,11 @@
 # !/usr/bin/env python3
 
 "a test module"
-from LearnPython.utils.util import log
+
 import sys
+
+from utils.util import log
+
 __author__ = 'Art2Cat'
 
 
