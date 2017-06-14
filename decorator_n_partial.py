@@ -37,6 +37,7 @@ def now():
     localtime = time.asctime(time.localtime(time.time()))
     print(localtime)
 
+
 now()
 
 
@@ -44,5 +45,6 @@ now()
 def now():
     localtime = time.asctime(time.localtime(time.time()))
     print(localtime)
+
 
 now()

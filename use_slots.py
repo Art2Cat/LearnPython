@@ -4,9 +4,14 @@ from cat import Cat
 from dog import Dog
 
 cat = Cat('囧爷', 'brown')
+dog1 = Dog.age('wang', 'brown', 2)
 dog = Dog('', 'yellow')
 print(cat)
-# cat()
+print(dog1)
+cat()
+
+Dog.bark()
+
 cat.introduce()
 dog.introduce()
 cat.set_name('囧大爷')
@@ -26,7 +31,7 @@ except Exception as e:
     print("Exception: ", e)
 
 try:
-    dog.test = 'test success'
+    dog1.test = 'test success'
 except Exception as e:
     print(e)
 else:
@@ -34,9 +39,7 @@ else:
 finally:
     print("finally...")
 
-print(dog.test)
-
 print(hasattr(cat, 'test2'))
-print(hasattr(dog, 'test'))
+print(hasattr(dog1, 'test'))
 
 print('' is None)
