@@ -11,13 +11,12 @@ class Dog(Animal):
 
     # '@classmethod' could be another constructor
     @classmethod
-    @log('static method')
     def age(cls, name, color, age):
         c = cls(name, color)
         c.age = age
         return c
 
     @classmethod
-    def bark(cls):
-        c = cls('dog', 'color')
-        print('dog is barking...')
+    @log('static method')
+    def bark(cls, bark):
+        print('dog is barking:\" %s \"...' % bark)

@@ -3,14 +3,14 @@
 from cat import Cat
 from dog import Dog
 
-cat = Cat('囧爷', 'brown')
+cat = Cat('囧爷', 'brown', 2)
 dog1 = Dog.age('wang', 'brown', 2)
 dog = Dog('', 'yellow')
 print(cat)
 print(dog1)
 cat()
 
-Dog.bark()
+Dog.bark('wang wang wang')
 
 cat.introduce()
 dog.introduce()
