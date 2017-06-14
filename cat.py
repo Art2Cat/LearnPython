@@ -7,6 +7,9 @@ class Cat(Animal):
     def __init__(self, name, color):
         super().__init__(name, color)
 
+    # 用于限制当前类实例的动态添加属性,继承了父类的限制
+    __slots__ = 'test'
+
     def introduce(self):
         if not self.get_name() is None and self.get_name() != '':
             print('%s is %s cat!!!' % (self.get_name(), self.get_color()))
@@ -20,19 +23,5 @@ class Cat(Animal):
         else:
             print('%s is running' % self.get_name())
 
-
-cat = Cat('囧爷', 'brown')
-dog = Dog('', 'yellow')
-print(cat)
-cat.introduce()
-dog.introduce()
-cat.set_name('囧大爷')
-print(cat.get_name())
-cat.introduce()
-cat.run()
-dog.run()
-cat.set_name(None)
-print(cat.get_name() is not None)
-print(dir(cat))
-
-print(hasattr(cat, '_Animal__name'))  # true
+    def __call__(self, *args, **kwargs):
+        self.introduce()
