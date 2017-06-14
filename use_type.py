@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+
 class Hello(object):
     def hello(self, name="world"):
-        print('hello, %s!' %name)
+        print('hello, %s!' % name)
 
 
 h = Hello()
@@ -14,7 +15,8 @@ print(type(h))
 
 
 def fc(self, name='world'):
-    print('fuck, %s!' %name)
+    print('fuck, %s!' % name)
+
 
 # use type method create class
 # first parameter: class name
