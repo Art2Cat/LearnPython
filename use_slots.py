@@ -29,17 +29,15 @@ try:
     cat.test2 = 'test failed'
 except Exception as e:
     print("Exception: ", e)
-
-try:
-    dog1.test = 'test success'
-except Exception as e:
-    print(e)
 else:
     print("no error!!!")
 finally:
     print("finally...")
 
-print(hasattr(cat, 'test2'))
-print(hasattr(dog1, 'test'))
+dog1.test = 'test success'
 
-print('' is None)
+print(hasattr(cat, 'test2'))  # false
+print(hasattr(dog1, 'test'))  # true
+
+del dog1.test  # delete instance dog1's property
+print(hasattr(dog1, 'test'))  # false
