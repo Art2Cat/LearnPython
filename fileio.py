@@ -14,7 +14,7 @@ def origin_read_all(path):
 
 
 def with_read_all(path):
-    # errors='ignore' better use with encoding=''
+    # errors='ignore' better use together with encoding=''
     # if path file not exist will break "with...as.." syntax
     with open(path, 'r', errors='ignore') as f:
         print(f.read())
