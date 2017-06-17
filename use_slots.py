@@ -28,11 +28,11 @@ print(hasattr(cat, '_Animal__name'))  # true
 try:
     cat.test2 = 'test failed'
 except Exception as e:
-    print("Exception: ", e)
+    print('Exception: ', e)
 else:
-    print("no error!!!")
+    print('no error!!!')
 finally:
-    print("finally...")
+    print('finally...')
 
 dog1.test = 'test success'
 
