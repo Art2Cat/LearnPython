@@ -29,7 +29,9 @@ print(z)
 os.rename('test.txt', 'test.log')
 
 os.remove('test.log')
+
 files = [x for x in os.listdir('.') if os.path.isfile(
     x) and os.path.splitext(x)[1] == '.py']
 
-print(files)
+for x in files:
+    print(x)
