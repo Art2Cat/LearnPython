@@ -8,7 +8,7 @@ for key in d:
     print(key)
 
 for k, v in d.items():
-    print("%s : %.2d" %(k, v))
+    print("%s : %.2d" % (k, v))
 
 
 for i, value in enumerate(['A', 'B', 'C']):
