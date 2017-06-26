@@ -38,7 +38,7 @@ def pipe_recv(p):
     print('Process to receive: %s' % os.getpid())
     while True:
         value = p.recv()
-        print('receivce %s from pipe.' % value)
+        print('receive %s from pipe.' % value)
         time.sleep(random.random())
 
 
