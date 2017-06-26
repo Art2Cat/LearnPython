@@ -1,41 +1,67 @@
 #!/usr/bin/env python3
 # -*- coding=utf-8 -*-
 
-from multiprocessing import Process, Queue
+import multiprocessing
 import os
 import time
 import random
+from multiprocessing import Process, Queue
 
-# 写数据进程执行的代码:
+from LearnPython.cat import Cat
 
 
-def write(q):
+def queue_put(q):
     print('Process to write: %s' % os.getpid())
     for value in ['A', 'B', 'C']:
         print('Put %s to queue...' % value)
         q.put(value)
         time.sleep(random.random())
 
-# 读数据进程执行的代码:
 
-
-def read(q):
+def queue_get(q):
     print('Process to read: %s' % os.getpid())
     while True:
         value = q.get(True)
         print('Get %s from queue.' % value)
+        time.sleep(random.random())
+
+
+def pipe_send(p):
+    print('Process to send: %s' % os.getpid())
+    for value in ['Hello', '囧大爷', 13, Cat('test', 'test', 1)]:
+        print('send %s to pipe...' % value)
+        p.send(value)
+        time.sleep(random.random())
+
+
+def pipe_recv(p):
+    print('Process to receive: %s' % os.getpid())
+    while True:
+        value = p.recv()
+        print('receivce %s from pipe.' % value)
+        time.sleep(random.random())
 
 
 if __name__ == '__main__':
-    # 父进程创建Queue，并传给各个子进程：
     q = Queue()
-    pw = Process(target=write, args=(q,))
-    pr = Process(target=read, args=(q,))
-    # 启动子进程pw，写入:
-    pw.start()
-    # 启动子进程pr，读取:
+    qp = Process(target=queue_put, args=(q,))
+    qg = Process(target=queue_get, args=(q,))
+
+    p = multiprocessing.Pipe()
+    ps = Process(target=pipe_send, args=(p[0],))
+    pr = Process(target=pipe_recv, args=(p[1],))
+
+    # start process
+    qp.start()
+    qg.start()
+    ps.start()
     pr.start()
-    # 等待pw结束:
-    pw.join()
-    # pr进程里是死循环，无法等待其结束，只能强行终止:
+
+    # waiting put and send process close
+    qp.join()
+    ps.join()
+
+    time.sleep(random.random())
+    # force terminate receive and get process
     pr.terminate()
+    qg.terminate()
