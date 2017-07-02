@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import functools
+import hashlib
 import time
 
 
@@ -63,3 +64,29 @@ def is_empty(string):
     if not string:
         return True
     return False
+
+
+def md5_with_salt(salt, content):
+    if not isinstance(salt, str):
+        salt = str(salt)
+    if not isinstance(content, str):
+        content = str(content)
+    md5 = hashlib.md5()
+    md5.update(content.encode('utf-8'))
+    return md5.hexdigest() + handle_salt(salt)
+
+
+def sha3512_with_salt(salt, content):
+    if not isinstance(salt, str):
+        salt = str(salt)
+    if not isinstance(content, str):
+        content = str(content)
+    sha3512 = hashlib.sha3_512()
+    sha3512.update(content.encode('utf-8'))
+    return sha3512.hexdigest() + handle_salt(salt)
+
+
+def handle_salt(salt):
+    md5 = hashlib.md5()
+    md5.update(salt.encode('utf-8'))
+    return md5.hexdigest()
