@@ -14,6 +14,10 @@ os.mkdir(y)
 os.rmdir(y)
 path = os.path.join(x, 'test.txt')
 
+# 使用os.walk() 遍历文件目录
+for foldername, subfolders, filenames in os.walk(x):
+    print("%s, %s, %s " % (foldername, subfolders, filenames))
+
 if os.path.exists(path):
     print("File exists")
 else:
