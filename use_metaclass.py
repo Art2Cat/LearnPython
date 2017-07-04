@@ -10,7 +10,8 @@ class ListMetaclass(type):
 
 # 指示使用ListMetaclass来定制类
 class MyList(list, metaclass=ListMetaclass):
-    pass
+    def add(self, param):
+        pass
 
 
 L = MyList()
