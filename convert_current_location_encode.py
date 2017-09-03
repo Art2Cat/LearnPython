@@ -54,7 +54,7 @@ def explore(dir):
     for root, dirs, files in os.walk(dir):
         for file in files:
             path = os.path.join(root, os.path.basename(file))
-            if check_file(file):
+            if os.path.isfile(file):
                 convert(path)
 
 
